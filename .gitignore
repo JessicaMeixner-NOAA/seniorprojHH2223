@@ -5,4 +5,5 @@ exec*
 grids/*/*.msh
 *.png
 */*.png
-*/*/*.png 
+*/*/*.png
+ObstGrid/obsout.out 

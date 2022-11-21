@@ -10,7 +10,7 @@ from alphaBetaLab.abEstimateAndSave import triMeshSpecFromMshFile, abEstimateAnd
 # definition of the spectral grid
 dirs = np.linspace(0, 2*np.pi, 36)
 #offset by 0.5:
-offset = 0.05*pi/180 
+offset = 0.05*np.pi/180 
 dirs = dirs + offset
 nfreq = 50
 minfrq = .035

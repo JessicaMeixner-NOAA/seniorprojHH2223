@@ -17,7 +17,7 @@ module load hpc-miniconda3/4.6.14
 module load alphabeta/1.0.0
 
 #Update this to be your python path: 
-export PYTHONPATH=/work2/noaa/marine/jmeixner/unstructuredgrids/seniorprojHH2223/alphaBetaLab
+export PYTHONPATH=/work2/noaa/marine/jmeixner/unstructuredgrids/v0/alphaBetaLab
 
 ulimit -s unlimited
 
