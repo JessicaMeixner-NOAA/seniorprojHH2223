@@ -3,10 +3,10 @@ set -x
 
 
 #The next three lines need to be updated based on switch, ww3 directory path and final exec path 
-export SWITCHFILE="/work2/noaa/marine/jmeixner/unstructuredgrids/GFSv17/switch_PDLIB"
-export WW3_DIR="/work2/noaa/marine/jmeixner/unstructuredgrids/GFSv17/ww3"
-export finalexecdir="/work2/noaa/marine/jmeixner/unstructuredgrids/GFSv17/exec"
-
+THISDIR="/work2/noaa/marine/jmeixner/unstructuredgrids/v0"
+export SWITCHFILE="$THISDIR/switch_PDLIB"
+export WW3_DIR="$THISDIR/ww3"
+export finalexecdir="$THISDIR/exec"
 
 #Determine machine and load modules
 set +x
@@ -30,6 +30,11 @@ set -x
 prep_exes="ww3_grid ww3_prep ww3_prnc ww3_grid ww3_strt"
 post_exes="ww3_outp ww3_outf ww3_outp ww3_gint ww3_ounf ww3_ounp"
 run_exes="ww3_shel ww3_multi"
+
+#create exec dir 
+if [[ ! -d "${finalexecdir}" ]]; then
+  mkdir -p ${finalexecdir}
+fi
 
 #create SHRD build directory: 
 path_build="$WW3_DIR/build_SHRD"
@@ -141,6 +146,5 @@ done
 echo "executables are in ${finalexecdir}" 
 echo "cleaning up ${path_build}" 
 rm -rf "${path_build}"
-
 
 exit 0

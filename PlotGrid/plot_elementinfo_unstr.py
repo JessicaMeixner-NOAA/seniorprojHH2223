@@ -20,11 +20,12 @@ def read_gmsh(filename):
     # filename - name of gmsh file 
 
     #output: 
-    #xy    -  x/y or lon/lat of nodes 
+    #xy    -  x/y or lon/lat of nodes (lon points are put in -180 to 180 range)
     #depth - depth value at node points  
     #ect   - element connection table 
     #bnd   - list of boundary nodes 
-    
+
+    #This file was adapted from Steven Brus https://github.com/sbrus89/ww3_utils    
     #Open gmsh file "filename" 
     f = open(filename,'r')
     lines = f.read().splitlines()
@@ -147,6 +148,7 @@ def plot_eleminfo(plotdescriptor, xy,ect,distmin,distmax,depth):
 
   #Create mask to mask out any element that is going to have ~-180 and 180 nodes 
   # Mask is 0 to include or 1 to exclude 
+  # This is a limitation of this plotting routine.  Ideally we'd create new elements to "wrap" values. 
 
   ne = len(ect) #number of elements
   mask = np.ones((ne,),dtype=np.int32) 

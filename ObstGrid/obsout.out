@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/work2/noaa/marine/jmeixner/unstructuredgrids/v0/ObstGrid/obstFileBuilder.py", line 13, in <module>
+    offset = 0.05*pi/180 
+NameError: name 'pi' is not defined
