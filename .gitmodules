@@ -1,0 +1,6 @@
+[submodule "alphaBetaLab"]
+	path = alphaBetaLab
+	url = https://github.com/menta78/alphaBetaLab
+[submodule "ww3"]
+	path = ww3
+	url = https://github.com/noaa-emc/ww3

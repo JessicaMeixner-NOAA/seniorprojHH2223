@@ -1,0 +1,8 @@
+*.nc
+*/*.nc
+*/*/*.nc
+exec*
+grids/*/*.msh
+*.png
+*/*.png
+*/*/*.png 
