@@ -6,4 +6,11 @@ grids/*/*.msh
 *.png
 */*.png
 */*/*.png
-ObstGrid/obsout.out 
+ObstGrid/obsout.out
+ObstGrid/obsout.out
+ObstGrid/output*
+grids/*/ST4TABUHF2.bin
+grids/*/*.ww3
+grids/*/*.out
+grids/*/times.*
+ 
