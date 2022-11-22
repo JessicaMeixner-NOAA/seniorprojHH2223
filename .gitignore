@@ -13,4 +13,4 @@ grids/*/ST4TABUHF2.bin
 grids/*/*.ww3
 grids/*/*.out
 grids/*/times.*
- 
+grids/*/ww3_prnc.inp 
