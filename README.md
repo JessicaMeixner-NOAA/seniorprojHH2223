@@ -4,7 +4,11 @@
 This is a repo to keep information for Holly's senior project work
 
 
-# To clone and set-up this repo: 
+# Step 1: Clone and set-up this repo: 
+
+To clone and set-up your repo, follow the following steps to clone, 
+get the submodules (ww3 and alphabeta lab which connect to their own repos), 
+and then copy in the mesh grid files which are too large to put in GitHub: 
 
 ```
 git clone https://github.com/JessicaMeixner-NOAA/seniorprojHH2223 foldername
@@ -14,32 +18,42 @@ sh setupgrids.sh
 ```
 
 # To build WW3: 
-Update SWITCHFILE to be the path to your switch file 
-Update WW3_DIR to point to the path to ww3 (ie $fullpath/$foldername/ww3) 
-Update finalexecdir to point to where you want to keep these execs 
-Then run the build script: 
+
+To build WW3 you will need to update three variables in the build ww3 script: 
+
+SWITCHFILE   - the path to your switch file 
+WW3_DIR      - path to ww3 (ie $fullpath/$foldername/ww3) 
+finalexecdir - the folder destination for the executables to be built 
+
+After updating these variables, run the build script: 
 
 ```
 sh build_ww3.sh
 ```
 
-note: don't save the exec directory to github 
+Note: Please don't save/add the exec directory to github. 
 
 
 
 # To plot figures of the grids: 
 
-See the PlotGrid/jop_plot.sh jobcard where it has the general set-up.  
-You need to give it the filename.msh file and  a nick-name for the 
-grid, that will be used when saving the grid files. 
+To plot the element structure, min/max size of grids and the bathymetry, you can 
+use the job script PlotGrid/jop_plot.sh which has the correct modules to 
+run PlotGrid/plot_elementinfo_unstr.py.   There are two inputs to the python
+script that will need to be updated with path to your mesh file and what the 
+descriptor should be when saving the files. 
 
-Update the values on the min/max for the size of grid plots by changing 
+You can copy the job_plot.sh script so that you submit many different jobs 
+at the same time with different grids.  Just make sure to use a different 
+descriptor so that they'll save the files as a different localtion. 
+
+For the min/max grid size plots and to help with uniformity and making sure 
+you have the right colorbar, you can update the min and max values which are named: 
 ```
   vpltmin=1
   vpltmax=50
 ```
-in 
-PlotGrid/plot_elementinfo_unstr.py
+in PlotGrid/plot_elementinfo_unstr.py
 
 
 # Make runs 
@@ -55,6 +69,16 @@ exe directory to use your own execs. These runs will have the spin-up and they w
 have individual outputs.  This means, that you can justupdate your ww3_multi.inp with 
 the next restart time and keep running if you want instead of making new folders.  
 Completely up to you. ww3_post.sh jobs are in progress but not yet finished.  
+
+Steps to follow: 
+1. Update WW3EXECDIR in job_prep.sh and job_run.sh scripts
+2. In job_run.sh you can update the number of nodes, tasks per node and srun if you want 
+3. sbatch < job_prep.sh 
+4. After prep job runs, make sure you update WW3EXECDIR in job_run.sh and any other updates you want 
+5. sbatch < jop_run.sh 
+
+(Output scripts coming...) 
+
 
 # validation
 
