@@ -6,12 +6,12 @@ This is a repo to keep information for Holly's senior project work
 
 # To clone and set-up this repo: 
 
-'''
+```
 git clone https://github.com/JessicaMeixner-NOAA/seniorprojHH2223 foldername
 cd foldername
 git submodule update --init --recursive 
 sh setupgrids.sh
-'''
+```
 
 # To build WW3: 
 Update SWITCHFILE to be the path to your switch file 
@@ -19,9 +19,9 @@ Update WW3_DIR to point to the path to ww3 (ie $fullpath/$foldername/ww3)
 Update finalexecdir to point to where you want to keep these execs 
 Then run the build script: 
 
-'''
-build_ww3.sh
-'''
+```
+sh build_ww3.sh
+```
 
 note: don't save the exec directory to github 
 
@@ -34,12 +34,13 @@ You need to give it the filename.msh file and  a nick-name for the
 grid, that will be used when saving the grid files. 
 
 Update the values on the min/max for the size of grid plots by changing 
-'''
+```
   vpltmin=1
   vpltmax=50
-'''
+```
 in 
 PlotGrid/plot_elementinfo_unstr.py
+
 
 # Make runs 
 
