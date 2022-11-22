@@ -56,15 +56,18 @@ have individual outputs.  This means, that you can justupdate your ww3_multi.inp
 the next restart time and keep running if you want instead of making new folders.  
 Completely up to you. ww3_post.sh jobs are in progress but not yet finished.  
 
-#validation
+# validation
 
 Validation jobs will also eventually be added. 
 
-#obstruction grid 
+# obstruction grid 
 
 Lastly, I was able to get an ubstruction grid calculated for the 100km grid.  I have not yet made any runs from this yet, but we can make them!   See ObstGrid/job_obs.sh which has the job script (need to update python path) and then ou need to update ObstGrid/obstFileBuilder.py to point to your msh file and what the output directory should be called.  Lastly you could point to your own etopo file, but you can point to mine for now.  
 
-#TODO -- add info about where to get etopo file
+
+
+
+TODO -- add info about where to get etopo file
 
  
 
