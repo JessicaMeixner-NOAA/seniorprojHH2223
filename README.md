@@ -55,6 +55,11 @@ you have the right colorbar, you can update the min and max values which are nam
 ```
 in PlotGrid/plot_elementinfo_unstr.py
 
+Note, the first time you run the python script, cartopy and other python plotting
+will need to download shapefiles.  This is usually more successful from the 
+command line so if your jobs time out with 'DownloadWarning: Downloading:' 
+run the python script from the command line once with the smallest grid you have. 
+
 
 # Make runs 
 
