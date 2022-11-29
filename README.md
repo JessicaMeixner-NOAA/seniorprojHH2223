@@ -81,9 +81,12 @@ Steps to follow:
 3. sbatch < job_prep.sh 
 4. After prep job runs, make sure you update WW3EXECDIR in job_run.sh and any other updates you want 
 5. sbatch < jop_run.sh 
-
-(Output scripts coming...) 
-
+6. Make the netcdf output: 
+   sbatch < job_post.sh 
+   sbatch < job_post_pnt.sh
+7. Combine the netcdf output to have one file: 
+   sbatch < job_combine_grid.sh
+   sbatch < job_combine_pnt.sh 
 
 # validation
 
