@@ -84,15 +84,31 @@ Steps to follow:
 6. Make the netcdf output by running the following two jobs.  Make sure to update WW3EXECDIR in each first: 
    sbatch < job_post.sh 
    sbatch < job_post_pnt.sh
+   sbatch < job_pnt.sh
 7. Combine the netcdf output to have one file: 
    sbatch < job_combine_grid.sh
    sbatch < job_combine_pnt.sh 
-
+   sbatch < job_combine_pnt2.sh
 # validation
 
 Validation jobs will also eventually be added. 
 
 # obstruction grid 
+
+Step 1: Make the obstruction grid 
+
+- First, in ObstGrid/obstFileBuilder.py change  "gridname" to the nick-name of your grid, set "mshfile" to the full path of your mesh file, and lastly change "outputDestDir" to a new output directory for you grid.  
+- Second, submit the job: 
+sbatch < job_obs.sh
+
+Do this for each of the grids. 
+
+Step 2: Create exes for using UOST 
+In 'build_ww3.sh' change the switch file variable "SWITCHFILE" to point to switch_UOST, and make sure to change the "finalexecdir" to be a new directory and not over-write your existing exes.   (Also doulbe check "WW3_DIR" is still pointing to your ww3 directory). 
+
+Then run sh build_ww3.sh 
+
+
 
 Lastly, I was able to get an ubstruction grid calculated for the 100km grid.  I have not yet made any runs from this yet, but we can make them!   See ObstGrid/job_obs.sh which has the job script (need to update python path) and then ou need to update ObstGrid/obstFileBuilder.py to point to your msh file and what the output directory should be called.  Lastly you could point to your own etopo file, but you can point to mine for now.  
 
