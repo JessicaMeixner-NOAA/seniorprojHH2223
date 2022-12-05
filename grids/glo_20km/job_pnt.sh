@@ -38,7 +38,7 @@ WW3EXECDIR=/work2/noaa/marine/jmeixner/unstructuredgrids/v0/exec
 
 NDATE=/apps/contrib/NCEP/libs/hpc-stack/intel-2018.4/prod_util/1.2.2/bin/ndate
 
-CycleStart=2021091000
+CycleStart=2021092400
 CycleEnd=2021102500
 CDATE=$CycleStart
 CYC_STEP=1
