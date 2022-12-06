@@ -27,7 +27,7 @@ ulimit -s unlimited
 ulimit -c 0
 
 
-grid=glo_depthC
+grid=glo_100km
 
 cdo mergetime ww3.*Z_tab.nc pnt.${grid}.tab.nc 
 

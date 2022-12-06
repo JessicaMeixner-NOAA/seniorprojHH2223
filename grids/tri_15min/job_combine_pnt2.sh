@@ -4,8 +4,8 @@
 #SBATCH -q batch
 #SBATCH --nodes=1                 
 #SBATCH -t 08:00:00
-#SBATCH -J combinencpnt
-#SBATCH -o combinencpnt.out
+#SBATCH -J combinencpnt2
+#SBATCH -o combinencpnt2.out
 #SBATCH -p orion
 
 module purge
@@ -29,7 +29,7 @@ ulimit -c 0
 
 grid=tri_15min
 
-cdo mergetime pnt.*Z_tab.nc pnt.${grid}.tab.nc 
+cdo mergetime ww3.*Z_tab.nc pnt.${grid}.tab.nc 
 
 
 echo "done"
